@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/subclass/widget.rs`."><title>widget.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0-nightly (36153f1a4 2024-05-24)" data-channel="nightly" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/subclass/widget.rs`."><title>widget.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0-nightly (6f3df08aa 2024-05-30)" data-channel="nightly" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1956,9 +1956,9 @@
 <span class="kw">use </span>glib::{<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/clone/trait.Downgrade.html">clone::Downgrade</a>, <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/signal/struct.SignalId.html">subclass::SignalId</a>, <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/index.html">translate</a>::<span class="kw-2">*</span>, <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/gstring/struct.GString.html">GString</a>, Variant};
 
 <span class="kw">use crate</span>::{
-    <a href="../lib.rs.html#138">prelude</a>::<span class="kw-2">*</span>, <a href="mod.rs.html#91-174">subclass::prelude</a>::<span class="kw-2">*</span>, <a href="../auto/enums.rs.html#922-1222">AccessibleRole</a>, <a href="../builder_rust_scope.rs.html#7-41">BuilderRustScope</a>, <a href="../auto/builder_scope.rs.html#7-36">BuilderScope</a>,
-    <a href="../auto/enums.rs.html#4222-4243">DirectionType</a>, <a href="../auto/layout_manager.rs.html#8-71">LayoutManager</a>, <a href="../auto/enums.rs.html#7533-7542">Orientation</a>, <a href="../auto/shortcut.rs.html#13-59">Shortcut</a>, <a href="../auto/enums.rs.html#10800-10812">SizeRequestMode</a>, <a href="../auto/snapshot.rs.html#9-32">Snapshot</a>, <a href="../auto/flags.rs.html#1497-1555">StateFlags</a>,
-    <a href="../auto/enums.rs.html#11904-11929">SystemSetting</a>, <a href="../auto/enums.rs.html#12025-12037">TextDirection</a>, <a href="../auto/tooltip.rs.html#8-46">Tooltip</a>, <a href="../auto/widget.rs.html#18-853">Widget</a>,
+    <a href="../lib.rs.html#138">prelude</a>::<span class="kw-2">*</span>, <a href="mod.rs.html#91-174">subclass::prelude</a>::<span class="kw-2">*</span>, <a href="../auto/enums.rs.html#932-1232">AccessibleRole</a>, <a href="../builder_rust_scope.rs.html#7-41">BuilderRustScope</a>, <a href="../auto/builder_scope.rs.html#7-36">BuilderScope</a>,
+    <a href="../auto/enums.rs.html#4493-4514">DirectionType</a>, <a href="../auto/layout_manager.rs.html#8-71">LayoutManager</a>, <a href="../auto/enums.rs.html#7804-7813">Orientation</a>, <a href="../auto/shortcut.rs.html#13-59">Shortcut</a>, <a href="../auto/enums.rs.html#11071-11083">SizeRequestMode</a>, <a href="../auto/snapshot.rs.html#9-32">Snapshot</a>, <a href="../auto/flags.rs.html#1502-1560">StateFlags</a>,
+    <a href="../auto/enums.rs.html#12175-12200">SystemSetting</a>, <a href="../auto/enums.rs.html#12296-12308">TextDirection</a>, <a href="../auto/tooltip.rs.html#8-46">Tooltip</a>, <a href="../auto/widget.rs.html#18-853">Widget</a>,
 };
 
 <span class="attr">#[derive(Debug, Default)]
@@ -2077,12 +2077,12 @@
 
     <span class="doccomment">/// Signal emitted when the text direction of a
     ///   widget changes.
-    </span><span class="kw">fn </span>direction_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, previous_direction: <a href="../auto/enums.rs.html#12025-12037">TextDirection</a>) {
+    </span><span class="kw">fn </span>direction_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, previous_direction: <a href="../auto/enums.rs.html#12296-12308">TextDirection</a>) {
         <a class="self" href="#132">self</a>.<a href="#437-448">parent_direction_changed</a>(<a href="#132">previous_direction</a>)
     }
 
     <span class="doccomment">/// Vfunc for gtk_widget_child_focus()
-    </span><span class="kw">fn </span>focus(<span class="kw-2">&amp;</span><span class="self">self</span>, direction_type: <a href="../auto/enums.rs.html#4222-4243">DirectionType</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> {
+    </span><span class="kw">fn </span>focus(<span class="kw-2">&amp;</span><span class="self">self</span>, direction_type: <a href="../auto/enums.rs.html#4493-4514">DirectionType</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> {
         <a class="self" href="#137">self</a>.<a href="#451-464">parent_focus</a>(<a href="#137">direction_type</a>)
     }
 
@@ -2098,7 +2098,7 @@
     ///
     /// The [`SizeRequestMode`][crate::SizeRequestMode] preferred by @self.
     </span><span class="attr">#[doc(alias = <span class="string">"get_request_mode"</span>)]
-    </span><span class="kw">fn </span>request_mode(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="../auto/enums.rs.html#10800-10812">SizeRequestMode</a> {
+    </span><span class="kw">fn </span>request_mode(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="../auto/enums.rs.html#11071-11083">SizeRequestMode</a> {
         <a class="self" href="#153">self</a>.<a href="#466-475">parent_request_mode</a>()
     }
 
@@ -2166,7 +2166,7 @@
     /// [`true`] if stopping keyboard navigation is fine, [`false`]
     ///   if the emitting widget should try to handle the keyboard
     ///   navigation attempt in its parent container(s).
-    </span><span class="kw">fn </span>keynav_failed(<span class="kw-2">&amp;</span><span class="self">self</span>, direction_type: <a href="../auto/enums.rs.html#4222-4243">DirectionType</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> {
+    </span><span class="kw">fn </span>keynav_failed(<span class="kw-2">&amp;</span><span class="self">self</span>, direction_type: <a href="../auto/enums.rs.html#4493-4514">DirectionType</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> {
         <a class="self" href="#221">self</a>.<a href="#505-518">parent_keynav_failed</a>(<a href="#221">direction_type</a>)
     }
 
@@ -2210,7 +2210,7 @@
     /// ## `natural_baseline`
     /// location to store the baseline
     ///   position for the natural size, or -1 to report no baseline
-    </span><span class="kw">fn </span>measure(<span class="kw-2">&amp;</span><span class="self">self</span>, orientation: <a href="../auto/enums.rs.html#7533-7542">Orientation</a>, for_size: <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; (<a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) {
+    </span><span class="kw">fn </span>measure(<span class="kw-2">&amp;</span><span class="self">self</span>, orientation: <a href="../auto/enums.rs.html#7804-7813">Orientation</a>, for_size: <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; (<a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) {
         <a class="self" href="#265">self</a>.<a href="#530-554">parent_measure</a>(<a href="#265">orientation</a>, <a href="#265">for_size</a>)
     }
 
@@ -2228,7 +2228,7 @@
     }
 
     <span class="doccomment">/// Signal emitted when a change of focus is requested
-    </span><span class="kw">fn </span>move_focus(<span class="kw-2">&amp;</span><span class="self">self</span>, direction_type: <a href="../auto/enums.rs.html#4222-4243">DirectionType</a>) {
+    </span><span class="kw">fn </span>move_focus(<span class="kw-2">&amp;</span><span class="self">self</span>, direction_type: <a href="../auto/enums.rs.html#4493-4514">DirectionType</a>) {
         <a class="self" href="#283">self</a>.<a href="#572-583">parent_move_focus</a>(<a href="#283">direction_type</a>)
     }
 
@@ -2310,12 +2310,12 @@
 
     <span class="doccomment">/// Signal emitted when the widget state changes,
     ///   see gtk_widget_get_state_flags().
-    </span><span class="kw">fn </span>state_flags_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, state_flags: <span class="kw-2">&amp;</span><a href="../auto/flags.rs.html#1497-1555">StateFlags</a>) {
+    </span><span class="kw">fn </span>state_flags_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, state_flags: <span class="kw-2">&amp;</span><a href="../auto/flags.rs.html#1502-1560">StateFlags</a>) {
         <a class="self" href="#365">self</a>.<a href="#682-693">parent_state_flags_changed</a>(<a href="#365">state_flags</a>)
     }
 
     <span class="doccomment">/// Emitted when a system setting was changed. Must chain up.
-    </span><span class="kw">fn </span>system_setting_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, settings: <span class="kw-2">&amp;</span><a href="../auto/enums.rs.html#11904-11929">SystemSetting</a>) {
+    </span><span class="kw">fn </span>system_setting_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, settings: <span class="kw-2">&amp;</span><a href="../auto/enums.rs.html#12175-12200">SystemSetting</a>) {
         <a class="self" href="#370">self</a>.<a href="#695-706">parent_system_setting_changed</a>(<a href="#370">settings</a>)
     }
 
@@ -2382,7 +2382,7 @@
         }
     }
 
-    <span class="kw">fn </span>parent_direction_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, previous_direction: <a href="../auto/enums.rs.html#12025-12037">TextDirection</a>) {
+    <span class="kw">fn </span>parent_direction_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, previous_direction: <a href="../auto/enums.rs.html#12296-12308">TextDirection</a>) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/trait.ObjectSubclassType.html#tymethod.type_data"><span class="self">Self</span>::type_data</a>();
             <span class="kw">let </span>parent_class = <a href="#439">data</a>.<a href="https://doc.rust-lang.org/nightly/core/ptr/non_null/struct.NonNull.html#method.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/struct.TypeData.html#method.parent_class">parent_class</a>() <span class="kw">as </span><span class="kw-2">*mut </span><a href="../../../gtk4_sys/struct.GtkWidgetClass.html">ffi::GtkWidgetClass</a>;
@@ -2396,7 +2396,7 @@
     }
 
     <span class="comment">// Returns true if focus ended up inside widget
-    </span><span class="kw">fn </span>parent_focus(<span class="kw-2">&amp;</span><span class="self">self</span>, direction_type: <a href="../auto/enums.rs.html#4222-4243">DirectionType</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> {
+    </span><span class="kw">fn </span>parent_focus(<span class="kw-2">&amp;</span><span class="self">self</span>, direction_type: <a href="../auto/enums.rs.html#4493-4514">DirectionType</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/trait.ObjectSubclassType.html#tymethod.type_data"><span class="self">Self</span>::type_data</a>();
             <span class="kw">let </span>parent_class = <a href="#453">data</a>.<a href="https://doc.rust-lang.org/nightly/core/ptr/non_null/struct.NonNull.html#method.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/struct.TypeData.html#method.parent_class">parent_class</a>() <span class="kw">as </span><span class="kw-2">*mut </span><a href="../../../gtk4_sys/struct.GtkWidgetClass.html">ffi::GtkWidgetClass</a>;
@@ -2411,7 +2411,7 @@
         }
     }
 
-    <span class="kw">fn </span>parent_request_mode(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="../auto/enums.rs.html#10800-10812">SizeRequestMode</a> {
+    <span class="kw">fn </span>parent_request_mode(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="../auto/enums.rs.html#11071-11083">SizeRequestMode</a> {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/trait.ObjectSubclassType.html#tymethod.type_data"><span class="self">Self</span>::type_data</a>();
             <span class="kw">let </span>parent_class = <a href="#468">data</a>.<a href="https://doc.rust-lang.org/nightly/core/ptr/non_null/struct.NonNull.html#method.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/struct.TypeData.html#method.parent_class">parent_class</a>() <span class="kw">as </span><span class="kw-2">*mut </span><a href="../../../gtk4_sys/struct.GtkWidgetClass.html">ffi::GtkWidgetClass</a>;
@@ -2450,7 +2450,7 @@
     <span class="comment">// TRUE if stopping keyboard navigation is fine,
     // FALSE if the emitting widget should try to handle the keyboard navigation
     // attempt in its parent container(s).
-    </span><span class="kw">fn </span>parent_keynav_failed(<span class="kw-2">&amp;</span><span class="self">self</span>, direction_type: <a href="../auto/enums.rs.html#4222-4243">DirectionType</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> {
+    </span><span class="kw">fn </span>parent_keynav_failed(<span class="kw-2">&amp;</span><span class="self">self</span>, direction_type: <a href="../auto/enums.rs.html#4493-4514">DirectionType</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/trait.ObjectSubclassType.html#tymethod.type_data"><span class="self">Self</span>::type_data</a>();
             <span class="kw">let </span>parent_class = <a href="#507">data</a>.<a href="https://doc.rust-lang.org/nightly/core/ptr/non_null/struct.NonNull.html#method.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/struct.TypeData.html#method.parent_class">parent_class</a>() <span class="kw">as </span><span class="kw-2">*mut </span><a href="../../../gtk4_sys/struct.GtkWidgetClass.html">ffi::GtkWidgetClass</a>;
@@ -2475,7 +2475,7 @@
         }
     }
 
-    <span class="kw">fn </span>parent_measure(<span class="kw-2">&amp;</span><span class="self">self</span>, orientation: <a href="../auto/enums.rs.html#7533-7542">Orientation</a>, for_size: <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; (<a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) {
+    <span class="kw">fn </span>parent_measure(<span class="kw-2">&amp;</span><span class="self">self</span>, orientation: <a href="../auto/enums.rs.html#7804-7813">Orientation</a>, for_size: <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; (<a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/trait.ObjectSubclassType.html#tymethod.type_data"><span class="self">Self</span>::type_data</a>();
             <span class="kw">let </span>parent_class = <a href="#532">data</a>.<a href="https://doc.rust-lang.org/nightly/core/ptr/non_null/struct.NonNull.html#method.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/struct.TypeData.html#method.parent_class">parent_class</a>() <span class="kw">as </span><span class="kw-2">*mut </span><a href="../../../gtk4_sys/struct.GtkWidgetClass.html">ffi::GtkWidgetClass</a>;
@@ -2517,7 +2517,7 @@
         }
     }
 
-    <span class="kw">fn </span>parent_move_focus(<span class="kw-2">&amp;</span><span class="self">self</span>, direction_type: <a href="../auto/enums.rs.html#4222-4243">DirectionType</a>) {
+    <span class="kw">fn </span>parent_move_focus(<span class="kw-2">&amp;</span><span class="self">self</span>, direction_type: <a href="../auto/enums.rs.html#4493-4514">DirectionType</a>) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/trait.ObjectSubclassType.html#tymethod.type_data"><span class="self">Self</span>::type_data</a>();
             <span class="kw">let </span>parent_class = <a href="#574">data</a>.<a href="https://doc.rust-lang.org/nightly/core/ptr/non_null/struct.NonNull.html#method.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/struct.TypeData.html#method.parent_class">parent_class</a>() <span class="kw">as </span><span class="kw-2">*mut </span><a href="../../../gtk4_sys/struct.GtkWidgetClass.html">ffi::GtkWidgetClass</a>;
@@ -2627,7 +2627,7 @@
         }
     }
 
-    <span class="kw">fn </span>parent_state_flags_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, state_flags: <span class="kw-2">&amp;</span><a href="../auto/flags.rs.html#1497-1555">StateFlags</a>) {
+    <span class="kw">fn </span>parent_state_flags_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, state_flags: <span class="kw-2">&amp;</span><a href="../auto/flags.rs.html#1502-1560">StateFlags</a>) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/trait.ObjectSubclassType.html#tymethod.type_data"><span class="self">Self</span>::type_data</a>();
             <span class="kw">let </span>parent_class = <a href="#684">data</a>.<a href="https://doc.rust-lang.org/nightly/core/ptr/non_null/struct.NonNull.html#method.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/struct.TypeData.html#method.parent_class">parent_class</a>() <span class="kw">as </span><span class="kw-2">*mut </span><a href="../../../gtk4_sys/struct.GtkWidgetClass.html">ffi::GtkWidgetClass</a>;
@@ -2640,7 +2640,7 @@
         }
     }
 
-    <span class="kw">fn </span>parent_system_setting_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, settings: <span class="kw-2">&amp;</span><a href="../auto/enums.rs.html#11904-11929">SystemSetting</a>) {
+    <span class="kw">fn </span>parent_system_setting_changed(<span class="kw-2">&amp;</span><span class="self">self</span>, settings: <span class="kw-2">&amp;</span><a href="../auto/enums.rs.html#12175-12200">SystemSetting</a>) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>data = <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/trait.ObjectSubclassType.html#tymethod.type_data"><span class="self">Self</span>::type_data</a>();
             <span class="kw">let </span>parent_class = <a href="#697">data</a>.<a href="https://doc.rust-lang.org/nightly/core/ptr/non_null/struct.NonNull.html#method.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/struct.TypeData.html#method.parent_class">parent_class</a>() <span class="kw">as </span><span class="kw-2">*mut </span><a href="../../../gtk4_sys/struct.GtkWidgetClass.html">ffi::GtkWidgetClass</a>;
@@ -3501,7 +3501,7 @@
     /// ## `accessible_role`
     /// the [`AccessibleRole`][crate::AccessibleRole] used by the @self
     </span><span class="attr">#[doc(alias = <span class="string">"gtk_widget_class_set_accessible_role"</span>)]
-    </span><span class="kw">fn </span>set_accessible_role(<span class="kw-2">&amp;mut </span><span class="self">self</span>, role: <a href="../auto/enums.rs.html#922-1222">AccessibleRole</a>) {
+    </span><span class="kw">fn </span>set_accessible_role(<span class="kw-2">&amp;mut </span><span class="self">self</span>, role: <a href="../auto/enums.rs.html#932-1232">AccessibleRole</a>) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>widget_class = <span class="self"><a href="#1556">self</a> </span><span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_ as </span><span class="kw-2">*mut </span><a href="../../../gtk4_sys/struct.GtkWidgetClass.html">ffi::GtkWidgetClass</a>;
             <a href="../../../gtk4_sys/fn.gtk_widget_class_set_accessible_role.html">ffi::gtk_widget_class_set_accessible_role</a>(<a href="#1558">widget_class</a>, <a href="#1556">role</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.IntoGlib.html#tymethod.into_glib">into_glib</a>());
@@ -3520,7 +3520,7 @@
     /// the accessible role for the widget class
     </span><span class="attr">#[doc(alias = <span class="string">"gtk_widget_class_get_accessible_role"</span>)]
     #[doc(alias = <span class="string">"get_accessible_role"</span>)]
-    </span><span class="kw">fn </span>accessible_role(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="../auto/enums.rs.html#922-1222">AccessibleRole</a> {
+    </span><span class="kw">fn </span>accessible_role(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="../auto/enums.rs.html#932-1232">AccessibleRole</a> {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span>widget_class = <span class="self"><a href="#1575">self</a> </span><span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_ as </span><span class="kw-2">*mut </span><a href="../../../gtk4_sys/struct.GtkWidgetClass.html">ffi::GtkWidgetClass</a>;
             <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib.html">from_glib</a>(<a href="../../../gtk4_sys/fn.gtk_widget_class_get_accessible_role.html">ffi::gtk_widget_class_get_accessible_role</a>(<a href="#1577">widget_class</a>))

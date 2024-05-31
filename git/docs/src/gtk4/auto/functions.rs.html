@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/functions.rs`."><title>functions.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0-nightly (36153f1a4 2024-05-24)" data-channel="nightly" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/functions.rs`."><title>functions.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0-nightly (6f3df08aa 2024-05-30)" data-channel="nightly" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1314,8 +1314,8 @@
 #[cfg_attr(docsrs, doc(cfg(target_os = <span class="string">"linux"</span>)))]
 </span><span class="kw">use </span><a href="printer.rs.html#13-110"><span class="kw">crate</span>::Printer</a>;
 <span class="kw">use crate</span>::{
-    <a href="accessible.rs.html#19-69">Accessible</a>, <a href="enums.rs.html#485-572">AccessibleProperty</a>, <a href="enums.rs.html#707-789">AccessibleRelation</a>, <a href="enums.rs.html#922-1222">AccessibleRole</a>, <a href="enums.rs.html#1601-1647">AccessibleState</a>,
-    <a href="flags.rs.html#304-375">DebugFlags</a>, <a href="page_setup.rs.html#8-63">PageSetup</a>, <a href="print_settings.rs.html#11-34">PrintSettings</a>, <a href="style_context.rs.html#14-71">StyleContext</a>, <a href="enums.rs.html#12025-12037">TextDirection</a>, <a href="tree_model.rs.html#14-276">TreeModel</a>, <a href="tree_path.rs.html#7-20">TreePath</a>, <a href="widget.rs.html#18-853">Widget</a>,
+    <a href="accessible.rs.html#19-69">Accessible</a>, <a href="enums.rs.html#485-578">AccessibleProperty</a>, <a href="enums.rs.html#717-799">AccessibleRelation</a>, <a href="enums.rs.html#932-1232">AccessibleRole</a>, <a href="enums.rs.html#1611-1657">AccessibleState</a>,
+    <a href="flags.rs.html#304-380">DebugFlags</a>, <a href="page_setup.rs.html#8-63">PageSetup</a>, <a href="print_settings.rs.html#11-34">PrintSettings</a>, <a href="style_context.rs.html#14-71">StyleContext</a>, <a href="enums.rs.html#12296-12308">TextDirection</a>, <a href="tree_model.rs.html#14-276">TreeModel</a>, <a href="tree_path.rs.html#7-20">TreePath</a>, <a href="widget.rs.html#18-853">Widget</a>,
     <a href="window.rs.html#17-733">Window</a>,
 };
 <span class="kw">use </span>glib::{<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/prelude/index.html">prelude</a>::<span class="kw-2">*</span>, <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/index.html">translate</a>::<span class="kw-2">*</span>};
@@ -1473,7 +1473,7 @@
 /// the GTK debug flags.
 </span><span class="attr">#[doc(alias = <span class="string">"gtk_get_debug_flags"</span>)]
 #[doc(alias = <span class="string">"get_debug_flags"</span>)]
-</span><span class="kw">pub fn </span><a href="../../../gtk4/fn.debug_flags.html">debug_flags</a>() -&gt; <a href="flags.rs.html#304-375">DebugFlags</a> {
+</span><span class="kw">pub fn </span><a href="../../../gtk4/fn.debug_flags.html">debug_flags</a>() -&gt; <a href="flags.rs.html#304-380">DebugFlags</a> {
     <a class="macro" href="../rt.rs.html#23-35">assert_initialized_main_thread!</a>();
     <span class="kw">unsafe </span>{ <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib.html">from_glib</a>(<a href="../../../gtk4_sys/fn.gtk_get_debug_flags.html">ffi::gtk_get_debug_flags</a>()) }
 }
@@ -1551,7 +1551,7 @@
 /// the direction of the current locale
 </span><span class="attr">#[doc(alias = <span class="string">"gtk_get_locale_direction"</span>)]
 #[doc(alias = <span class="string">"get_locale_direction"</span>)]
-</span><span class="kw">pub fn </span><a href="../../../gtk4/fn.locale_direction.html">locale_direction</a>() -&gt; <a href="enums.rs.html#12025-12037">TextDirection</a> {
+</span><span class="kw">pub fn </span><a href="../../../gtk4/fn.locale_direction.html">locale_direction</a>() -&gt; <a href="enums.rs.html#12296-12308">TextDirection</a> {
     <a class="macro" href="../rt.rs.html#23-35">assert_initialized_main_thread!</a>();
     <span class="kw">unsafe </span>{ <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib.html">from_glib</a>(<a href="../../../gtk4_sys/fn.gtk_get_locale_direction.html">ffi::gtk_get_locale_direction</a>()) }
 }
@@ -2284,7 +2284,7 @@
 /// ## `flags`
 /// the debug flags to set
 </span><span class="attr">#[doc(alias = <span class="string">"gtk_set_debug_flags"</span>)]
-</span><span class="kw">pub fn </span><a href="../../../gtk4/fn.set_debug_flags.html">set_debug_flags</a>(flags: <a href="flags.rs.html#304-375">DebugFlags</a>) {
+</span><span class="kw">pub fn </span><a href="../../../gtk4/fn.set_debug_flags.html">set_debug_flags</a>(flags: <a href="flags.rs.html#304-380">DebugFlags</a>) {
     <a class="macro" href="../rt.rs.html#23-35">assert_initialized_main_thread!</a>();
     <span class="kw">unsafe </span>{
         <a href="../../../gtk4_sys/fn.gtk_set_debug_flags.html">ffi::gtk_set_debug_flags</a>(<a href="#979">flags</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.IntoGlib.html#tymethod.into_glib">into_glib</a>());
@@ -2326,8 +2326,8 @@
     func: <span class="kw-2">&amp;</span><a href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,
     expr: <span class="kw-2">&amp;</span><a href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,
     accessible: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="accessible.rs.html#19-69">Accessible</a>&gt;,
-    expected_role: <a href="enums.rs.html#922-1222">AccessibleRole</a>,
-    actual_role: <a href="enums.rs.html#922-1222">AccessibleRole</a>,
+    expected_role: <a href="enums.rs.html#932-1232">AccessibleRole</a>,
+    actual_role: <a href="enums.rs.html#932-1232">AccessibleRole</a>,
 ) {
     <span class="macro">skip_assert_initialized!</span>();
     <span class="kw">unsafe </span>{
@@ -2356,7 +2356,7 @@
 </span><span class="attr">#[doc(alias = <span class="string">"gtk_test_accessible_has_property"</span>)]
 </span><span class="kw">pub fn </span><a href="../../../gtk4/fn.test_accessible_has_property.html">test_accessible_has_property</a>(
     accessible: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="accessible.rs.html#19-69">Accessible</a>&gt;,
-    property: <a href="enums.rs.html#485-572">AccessibleProperty</a>,
+    property: <a href="enums.rs.html#485-578">AccessibleProperty</a>,
 ) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> {
     <span class="macro">skip_assert_initialized!</span>();
     <span class="kw">unsafe </span>{
@@ -2379,7 +2379,7 @@
 </span><span class="attr">#[doc(alias = <span class="string">"gtk_test_accessible_has_relation"</span>)]
 </span><span class="kw">pub fn </span><a href="../../../gtk4/fn.test_accessible_has_relation.html">test_accessible_has_relation</a>(
     accessible: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="accessible.rs.html#19-69">Accessible</a>&gt;,
-    relation: <a href="enums.rs.html#707-789">AccessibleRelation</a>,
+    relation: <a href="enums.rs.html#717-799">AccessibleRelation</a>,
 ) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> {
     <span class="macro">skip_assert_initialized!</span>();
     <span class="kw">unsafe </span>{
@@ -2401,7 +2401,7 @@
 ///
 /// [`true`] if the role matches
 </span><span class="attr">#[doc(alias = <span class="string">"gtk_test_accessible_has_role"</span>)]
-</span><span class="kw">pub fn </span><a href="../../../gtk4/fn.test_accessible_has_role.html">test_accessible_has_role</a>(accessible: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="accessible.rs.html#19-69">Accessible</a>&gt;, role: <a href="enums.rs.html#922-1222">AccessibleRole</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> {
+</span><span class="kw">pub fn </span><a href="../../../gtk4/fn.test_accessible_has_role.html">test_accessible_has_role</a>(accessible: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="accessible.rs.html#19-69">Accessible</a>&gt;, role: <a href="enums.rs.html#932-1232">AccessibleRole</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> {
     <span class="macro">skip_assert_initialized!</span>();
     <span class="kw">unsafe </span>{
         <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib.html">from_glib</a>(<a href="../../../gtk4_sys/fn.gtk_test_accessible_has_role.html">ffi::gtk_test_accessible_has_role</a>(
@@ -2423,7 +2423,7 @@
 </span><span class="attr">#[doc(alias = <span class="string">"gtk_test_accessible_has_state"</span>)]
 </span><span class="kw">pub fn </span><a href="../../../gtk4/fn.test_accessible_has_state.html">test_accessible_has_state</a>(
     accessible: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="accessible.rs.html#19-69">Accessible</a>&gt;,
-    state: <a href="enums.rs.html#1601-1647">AccessibleState</a>,
+    state: <a href="enums.rs.html#1611-1657">AccessibleState</a>,
 ) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> {
     <span class="macro">skip_assert_initialized!</span>();
     <span class="kw">unsafe </span>{
