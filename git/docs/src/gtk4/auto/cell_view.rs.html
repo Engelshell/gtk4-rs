@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/cell_view.rs`."><title>cell_view.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0-nightly (6f3df08aa 2024-05-30)" data-channel="nightly" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/cell_view.rs`."><title>cell_view.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0-nightly (f67a1acc0 2024-06-01)" data-channel="nightly" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1254,8 +1254,8 @@
 </span><span class="attr">#![allow(deprecated)]
 
 </span><span class="kw">use crate</span>::{
-    <a href="accessible.rs.html#19-69">Accessible</a>, <a href="enums.rs.html#932-1232">AccessibleRole</a>, <a href="../enums.rs.html#77-107">Align</a>, <a href="buildable.rs.html#7-31">Buildable</a>, <a href="cell_area.rs.html#17-414">CellArea</a>, <a href="cell_area_context.rs.html#14-78">CellAreaContext</a>, <a href="cell_layout.rs.html#10-135">CellLayout</a>,
-    <a href="constraint_target.rs.html#7-22">ConstraintTarget</a>, <a href="layout_manager.rs.html#8-71">LayoutManager</a>, <a href="orientable.rs.html#13-43">Orientable</a>, <a href="enums.rs.html#7804-7813">Orientation</a>, <a href="enums.rs.html#7907-7918">Overflow</a>, <a href="tree_model.rs.html#14-276">TreeModel</a>, <a href="tree_path.rs.html#7-20">TreePath</a>,
+    <a href="../../../gtk4_sys/index.html">ffi</a>, <a href="accessible.rs.html#19-69">Accessible</a>, <a href="enums.rs.html#933-1233">AccessibleRole</a>, <a href="../enums.rs.html#77-107">Align</a>, <a href="buildable.rs.html#8-32">Buildable</a>, <a href="cell_area.rs.html#17-414">CellArea</a>, <a href="cell_area_context.rs.html#14-78">CellAreaContext</a>, <a href="cell_layout.rs.html#10-135">CellLayout</a>,
+    <a href="constraint_target.rs.html#8-23">ConstraintTarget</a>, <a href="layout_manager.rs.html#8-71">LayoutManager</a>, <a href="orientable.rs.html#13-43">Orientable</a>, <a href="enums.rs.html#7805-7814">Orientation</a>, <a href="enums.rs.html#7908-7919">Overflow</a>, <a href="tree_model.rs.html#14-276">TreeModel</a>, <a href="tree_path.rs.html#8-21">TreePath</a>,
     <a href="widget.rs.html#18-853">Widget</a>,
 };
 <span class="kw">use </span>glib::{
@@ -1646,7 +1646,7 @@
     ///
     /// [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`CellLayoutExt`][trait@crate::prelude::CellLayoutExt], [`OrientableExt`][trait@crate::prelude::OrientableExt], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual], [`CellLayoutExtManual`][trait@crate::prelude::CellLayoutExtManual]
     </span><span class="attr">#[doc(alias = <span class="string">"GtkCellView"</span>)]
-    </span><span class="kw">pub struct </span><a href="../../../gtk4/struct.CellView.html">CellView</a>(Object&lt;<a href="../../../gtk4_sys/struct.GtkCellView.html">ffi::GtkCellView</a>&gt;) @extends <a href="widget.rs.html#18-853">Widget</a>, @implements <a href="accessible.rs.html#19-69">Accessible</a>, <a href="buildable.rs.html#7-31">Buildable</a>, <a href="constraint_target.rs.html#7-22">ConstraintTarget</a>, <a href="cell_layout.rs.html#10-135">CellLayout</a>, <a href="orientable.rs.html#13-43">Orientable</a>;
+    </span><span class="kw">pub struct </span><a href="../../../gtk4/struct.CellView.html">CellView</a>(Object&lt;<a href="../../../gtk4_sys/struct.GtkCellView.html">ffi::GtkCellView</a>&gt;) @extends <a href="widget.rs.html#18-853">Widget</a>, @implements <a href="accessible.rs.html#19-69">Accessible</a>, <a href="buildable.rs.html#8-32">Buildable</a>, <a href="constraint_target.rs.html#8-23">ConstraintTarget</a>, <a href="cell_layout.rs.html#10-135">CellLayout</a>, <a href="orientable.rs.html#13-43">Orientable</a>;
 
     <span class="kw">match fn </span>{
         type_ =&gt; || ffi::gtk_cell_view_get_type(),
@@ -1666,7 +1666,7 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">"gtk_cell_view_new"</span>)]
     </span><span class="kw">pub fn </span>new() -&gt; <a href="#18-404">CellView</a> {
-        <a class="macro" href="../rt.rs.html#23-35">assert_initialized_main_thread!</a>();
+        <a class="macro" href="../rt.rs.html#24-36">assert_initialized_main_thread!</a>();
         <span class="kw">unsafe </span>{ <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.FromGlibPtrNone.html#tymethod.from_glib_none">Widget::from_glib_none</a>(<a href="../../../gtk4_sys/fn.gtk_cell_view_new.html">ffi::gtk_cell_view_new</a>()).<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/trait.Cast.html#tymethod.unsafe_cast">unsafe_cast</a>() }
     }
 
@@ -1723,7 +1723,7 @@
     #[doc(alias = <span class="string">"gtk_cell_view_new_with_markup"</span>)]
     #[doc(alias = <span class="string">"new_with_markup"</span>)]
     </span><span class="kw">pub fn </span>with_markup(markup: <span class="kw-2">&amp;</span><a href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a href="#18-404">CellView</a> {
-        <a class="macro" href="../rt.rs.html#23-35">assert_initialized_main_thread!</a>();
+        <a class="macro" href="../rt.rs.html#24-36">assert_initialized_main_thread!</a>();
         <span class="kw">unsafe </span>{
             <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.FromGlibPtrNone.html#tymethod.from_glib_none">Widget::from_glib_none</a>(<a href="../../../gtk4_sys/fn.gtk_cell_view_new_with_markup.html">ffi::gtk_cell_view_new_with_markup</a>(<a href="#475">markup</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>))
                 .<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/trait.Cast.html#tymethod.unsafe_cast">unsafe_cast</a>()
@@ -1746,7 +1746,7 @@
     #[doc(alias = <span class="string">"gtk_cell_view_new_with_text"</span>)]
     #[doc(alias = <span class="string">"new_with_text"</span>)]
     </span><span class="kw">pub fn </span>with_text(text: <span class="kw-2">&amp;</span><a href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; <a href="#18-404">CellView</a> {
-        <a class="macro" href="../rt.rs.html#23-35">assert_initialized_main_thread!</a>();
+        <a class="macro" href="../rt.rs.html#24-36">assert_initialized_main_thread!</a>();
         <span class="kw">unsafe </span>{
             <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.FromGlibPtrNone.html#tymethod.from_glib_none">Widget::from_glib_none</a>(<a href="../../../gtk4_sys/fn.gtk_cell_view_new_with_text.html">ffi::gtk_cell_view_new_with_text</a>(<a href="#498">text</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>))
                 .<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/trait.Cast.html#tymethod.unsafe_cast">unsafe_cast</a>()
@@ -1769,7 +1769,7 @@
     #[doc(alias = <span class="string">"gtk_cell_view_new_with_texture"</span>)]
     #[doc(alias = <span class="string">"new_with_texture"</span>)]
     </span><span class="kw">pub fn </span>with_texture(texture: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="../../../gdk4/auto/texture/struct.Texture.html">gdk::Texture</a>&gt;) -&gt; <a href="#18-404">CellView</a> {
-        <a class="macro" href="../rt.rs.html#23-35">assert_initialized_main_thread!</a>();
+        <a class="macro" href="../rt.rs.html#24-36">assert_initialized_main_thread!</a>();
         <span class="kw">unsafe </span>{
             <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.FromGlibPtrNone.html#tymethod.from_glib_none">Widget::from_glib_none</a>(<a href="../../../gtk4_sys/fn.gtk_cell_view_new_with_texture.html">ffi::gtk_cell_view_new_with_texture</a>(
                 <a href="#521">texture</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
@@ -1800,7 +1800,7 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">"gtk_cell_view_get_displayed_row"</span>)]
     #[doc(alias = <span class="string">"get_displayed_row"</span>)]
-    </span><span class="kw">pub fn </span>displayed_row(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<a href="tree_path.rs.html#7-20">TreePath</a>&gt; {
+    </span><span class="kw">pub fn </span>displayed_row(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<a href="tree_path.rs.html#8-21">TreePath</a>&gt; {
         <span class="kw">unsafe </span>{ <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib_full.html">from_glib_full</a>(<a href="../../../gtk4_sys/fn.gtk_cell_view_get_displayed_row.html">ffi::gtk_cell_view_get_displayed_row</a>(<a class="self" href="#553">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>)) }
     }
 
@@ -1871,7 +1871,7 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">"v4_10"</span>, deprecated = <span class="string">"Since 4.10"</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">"gtk_cell_view_set_displayed_row"</span>)]
-    </span><span class="kw">pub fn </span>set_displayed_row(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><a href="tree_path.rs.html#7-20">TreePath</a>&gt;) {
+    </span><span class="kw">pub fn </span>set_displayed_row(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><a href="tree_path.rs.html#8-21">TreePath</a>&gt;) {
         <span class="kw">unsafe </span>{
             <a href="../../../gtk4_sys/fn.gtk_cell_view_set_displayed_row.html">ffi::gtk_cell_view_set_displayed_row</a>(
                 <a class="self" href="#624">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
@@ -2306,7 +2306,7 @@
     ///
     /// This property is meant to be set by widget implementations,
     /// typically in their instance init function.
-    </span><span class="kw">pub fn </span>overflow(<span class="self">self</span>, overflow: <a href="enums.rs.html#7907-7918">Overflow</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>overflow(<span class="self">self</span>, overflow: <a href="enums.rs.html#7908-7919">Overflow</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#1059">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"overflow"</span>, <a href="#1059">overflow</a>),
         }
@@ -2405,14 +2405,14 @@
     <span class="doccomment">/// The accessible role of the given [`Accessible`][crate::Accessible] implementation.
     ///
     /// The accessible role cannot be changed once set.
-    </span><span class="kw">pub fn </span>accessible_role(<span class="self">self</span>, accessible_role: <a href="enums.rs.html#932-1232">AccessibleRole</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>accessible_role(<span class="self">self</span>, accessible_role: <a href="enums.rs.html#933-1233">AccessibleRole</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#1158">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"accessible-role"</span>, <a href="#1158">accessible_role</a>),
         }
     }
 
     <span class="doccomment">/// The orientation of the orientable.
-    </span><span class="kw">pub fn </span>orientation(<span class="self">self</span>, orientation: <a href="enums.rs.html#7804-7813">Orientation</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>orientation(<span class="self">self</span>, orientation: <a href="enums.rs.html#7805-7814">Orientation</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#1165">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"orientation"</span>, <a href="#1165">orientation</a>),
         }

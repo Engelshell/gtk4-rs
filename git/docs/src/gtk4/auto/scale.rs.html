@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/scale.rs`."><title>scale.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0-nightly (6f3df08aa 2024-05-30)" data-channel="nightly" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/scale.rs`."><title>scale.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0-nightly (f67a1acc0 2024-06-01)" data-channel="nightly" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1383,8 +1383,8 @@
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_10"</span>)))]
 </span><span class="kw">use </span><a href="accessible_range.rs.html#8-40"><span class="kw">crate</span>::AccessibleRange</a>;
 <span class="kw">use crate</span>::{
-    <a href="accessible.rs.html#19-69">Accessible</a>, <a href="enums.rs.html#932-1232">AccessibleRole</a>, <a href="adjustment.rs.html#12-97">Adjustment</a>, <a href="../enums.rs.html#77-107">Align</a>, <a href="buildable.rs.html#7-31">Buildable</a>, <a href="constraint_target.rs.html#7-22">ConstraintTarget</a>, <a href="layout_manager.rs.html#8-71">LayoutManager</a>,
-    <a href="orientable.rs.html#13-43">Orientable</a>, <a href="enums.rs.html#7804-7813">Orientation</a>, <a href="enums.rs.html#7907-7918">Overflow</a>, <a href="enums.rs.html#8653-8668">PositionType</a>, <a href="range.rs.html#18-546">Range</a>, <a href="widget.rs.html#18-853">Widget</a>,
+    <a href="../../../gtk4_sys/index.html">ffi</a>, <a href="accessible.rs.html#19-69">Accessible</a>, <a href="enums.rs.html#933-1233">AccessibleRole</a>, <a href="adjustment.rs.html#13-98">Adjustment</a>, <a href="../enums.rs.html#77-107">Align</a>, <a href="buildable.rs.html#8-32">Buildable</a>, <a href="constraint_target.rs.html#8-23">ConstraintTarget</a>, <a href="layout_manager.rs.html#8-71">LayoutManager</a>,
+    <a href="orientable.rs.html#13-43">Orientable</a>, <a href="enums.rs.html#7805-7814">Orientation</a>, <a href="enums.rs.html#7908-7919">Overflow</a>, <a href="enums.rs.html#8654-8669">PositionType</a>, <a href="range.rs.html#20-548">Range</a>, <a href="widget.rs.html#18-853">Widget</a>,
 };
 <span class="kw">use </span>glib::{
     <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/prelude/index.html">prelude</a>::<span class="kw-2">*</span>,
@@ -1845,7 +1845,7 @@
     ///
     /// [`ScaleExt`][trait@crate::prelude::ScaleExt], [`RangeExt`][trait@crate::prelude::RangeExt], [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`AccessibleRangeExt`][trait@crate::prelude::AccessibleRangeExt], [`OrientableExt`][trait@crate::prelude::OrientableExt], [`ScaleExtManual`][trait@crate::prelude::ScaleExtManual], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual]
     </span><span class="attr">#[doc(alias = <span class="string">"GtkScale"</span>)]
-    </span><span class="kw">pub struct </span><a href="../../../gtk4/struct.Scale.html">Scale</a>(Object&lt;<a href="../../../gtk4_sys/struct.GtkScale.html">ffi::GtkScale</a>, <a href="../../../gtk4_sys/struct.GtkScaleClass.html">ffi::GtkScaleClass</a>&gt;) @extends <a href="range.rs.html#18-546">Range</a>, <a href="widget.rs.html#18-853">Widget</a>, @implements <a href="accessible.rs.html#19-69">Accessible</a>, <a href="buildable.rs.html#7-31">Buildable</a>, <a href="constraint_target.rs.html#7-22">ConstraintTarget</a>, <a href="accessible_range.rs.html#8-40">AccessibleRange</a>, <a href="orientable.rs.html#13-43">Orientable</a>;
+    </span><span class="kw">pub struct </span><a href="../../../gtk4/struct.Scale.html">Scale</a>(Object&lt;<a href="../../../gtk4_sys/struct.GtkScale.html">ffi::GtkScale</a>, <a href="../../../gtk4_sys/struct.GtkScaleClass.html">ffi::GtkScaleClass</a>&gt;) @extends <a href="range.rs.html#20-548">Range</a>, <a href="widget.rs.html#18-853">Widget</a>, @implements <a href="accessible.rs.html#19-69">Accessible</a>, <a href="buildable.rs.html#8-32">Buildable</a>, <a href="constraint_target.rs.html#8-23">ConstraintTarget</a>, <a href="accessible_range.rs.html#8-40">AccessibleRange</a>, <a href="orientable.rs.html#13-43">Orientable</a>;
 
     <span class="kw">match fn </span>{
         type_ =&gt; || ffi::gtk_scale_get_type(),
@@ -1876,8 +1876,8 @@
     ///
     /// a new [`Scale`][crate::Scale]
     </span><span class="attr">#[doc(alias = <span class="string">"gtk_scale_new"</span>)]
-    </span><span class="kw">pub fn </span>new(orientation: <a href="enums.rs.html#7804-7813">Orientation</a>, adjustment: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="adjustment.rs.html#12-97">Adjustment</a>&gt;&gt;) -&gt; <a href="#21-476">Scale</a> {
-        <a class="macro" href="../rt.rs.html#23-35">assert_initialized_main_thread!</a>();
+    </span><span class="kw">pub fn </span>new(orientation: <a href="enums.rs.html#7805-7814">Orientation</a>, adjustment: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="adjustment.rs.html#13-98">Adjustment</a>&gt;&gt;) -&gt; <a href="#21-476">Scale</a> {
+        <a class="macro" href="../rt.rs.html#24-36">assert_initialized_main_thread!</a>();
         <span class="kw">unsafe </span>{
             <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.FromGlibPtrNone.html#tymethod.from_glib_none">Widget::from_glib_none</a>(<a href="../../../gtk4_sys/fn.gtk_scale_new.html">ffi::gtk_scale_new</a>(
                 <a href="#502">orientation</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.IntoGlib.html#tymethod.into_glib">into_glib</a>(),
@@ -1912,8 +1912,8 @@
     /// a new [`Scale`][crate::Scale]
     </span><span class="attr">#[doc(alias = <span class="string">"gtk_scale_new_with_range"</span>)]
     #[doc(alias = <span class="string">"new_with_range"</span>)]
-    </span><span class="kw">pub fn </span>with_range(orientation: <a href="enums.rs.html#7804-7813">Orientation</a>, min: <a href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>, max: <a href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>, step: <a href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>) -&gt; <a href="#21-476">Scale</a> {
-        <a class="macro" href="../rt.rs.html#23-35">assert_initialized_main_thread!</a>();
+    </span><span class="kw">pub fn </span>with_range(orientation: <a href="enums.rs.html#7805-7814">Orientation</a>, min: <a href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>, max: <a href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>, step: <a href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>) -&gt; <a href="#21-476">Scale</a> {
+        <a class="macro" href="../rt.rs.html#24-36">assert_initialized_main_thread!</a>();
         <span class="kw">unsafe </span>{
             <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.FromGlibPtrNone.html#tymethod.from_glib_none">Widget::from_glib_none</a>(<a href="../../../gtk4_sys/fn.gtk_scale_new_with_range.html">ffi::gtk_scale_new_with_range</a>(
                 <a href="#538">orientation</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.IntoGlib.html#tymethod.into_glib">into_glib</a>(),
@@ -1978,14 +1978,14 @@
     }
 
     <span class="doccomment">/// The position in which the current value is displayed.
-    </span><span class="kw">pub fn </span>value_pos(<span class="self">self</span>, value_pos: <a href="enums.rs.html#8653-8668">PositionType</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>value_pos(<span class="self">self</span>, value_pos: <a href="enums.rs.html#8654-8669">PositionType</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#604">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"value-pos"</span>, <a href="#604">value_pos</a>),
         }
     }
 
     <span class="doccomment">/// The adjustment that is controlled by the range.
-    </span><span class="kw">pub fn </span>adjustment(<span class="self">self</span>, adjustment: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="adjustment.rs.html#12-97">Adjustment</a>&gt;) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>adjustment(<span class="self">self</span>, adjustment: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="adjustment.rs.html#13-98">Adjustment</a>&gt;) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <span class="self"><a href="#611">self</a>
                 </span>.builder
@@ -2215,7 +2215,7 @@
     ///
     /// This property is meant to be set by widget implementations,
     /// typically in their instance init function.
-    </span><span class="kw">pub fn </span>overflow(<span class="self">self</span>, overflow: <a href="enums.rs.html#7907-7918">Overflow</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>overflow(<span class="self">self</span>, overflow: <a href="enums.rs.html#7908-7919">Overflow</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#841">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"overflow"</span>, <a href="#841">overflow</a>),
         }
@@ -2314,14 +2314,14 @@
     <span class="doccomment">/// The accessible role of the given [`Accessible`][crate::Accessible] implementation.
     ///
     /// The accessible role cannot be changed once set.
-    </span><span class="kw">pub fn </span>accessible_role(<span class="self">self</span>, accessible_role: <a href="enums.rs.html#932-1232">AccessibleRole</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>accessible_role(<span class="self">self</span>, accessible_role: <a href="enums.rs.html#933-1233">AccessibleRole</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#940">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"accessible-role"</span>, <a href="#940">accessible_role</a>),
         }
     }
 
     <span class="doccomment">/// The orientation of the orientable.
-    </span><span class="kw">pub fn </span>orientation(<span class="self">self</span>, orientation: <a href="enums.rs.html#7804-7813">Orientation</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>orientation(<span class="self">self</span>, orientation: <a href="enums.rs.html#7805-7814">Orientation</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#947">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"orientation"</span>, <a href="#947">orientation</a>),
         }
@@ -2366,7 +2366,7 @@
     /// ## `markup`
     /// Text to be shown at the mark, using Pango markup
     </span><span class="attr">#[doc(alias = <span class="string">"gtk_scale_add_mark"</span>)]
-    </span><span class="kw">fn </span>add_mark(<span class="kw-2">&amp;</span><span class="self">self</span>, value: <a href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>, position: <a href="enums.rs.html#8653-8668">PositionType</a>, markup: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><a href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;) {
+    </span><span class="kw">fn </span>add_mark(<span class="kw-2">&amp;</span><span class="self">self</span>, value: <a href="https://doc.rust-lang.org/nightly/std/primitive.f64.html">f64</a>, position: <a href="enums.rs.html#8654-8669">PositionType</a>, markup: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><a href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;) {
         <span class="kw">unsafe </span>{
             <a href="../../../gtk4_sys/fn.gtk_scale_add_mark.html">ffi::gtk_scale_add_mark</a>(
                 <a class="self" href="#992">self</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
@@ -2482,7 +2482,7 @@
     /// the position in which the current value is displayed
     </span><span class="attr">#[doc(alias = <span class="string">"gtk_scale_get_value_pos"</span>)]
     #[doc(alias = <span class="string">"get_value_pos"</span>)]
-    </span><span class="kw">fn </span>value_pos(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="enums.rs.html#8653-8668">PositionType</a> {
+    </span><span class="kw">fn </span>value_pos(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="enums.rs.html#8654-8669">PositionType</a> {
         <span class="kw">unsafe </span>{ <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib.html">from_glib</a>(<a href="../../../gtk4_sys/fn.gtk_scale_get_value_pos.html">ffi::gtk_scale_get_value_pos</a>(<a class="self" href="#1108">self</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>)) }
     }
 
@@ -2579,7 +2579,7 @@
     /// ## `pos`
     /// the position in which the current value is displayed
     </span><span class="attr">#[doc(alias = <span class="string">"gtk_scale_set_value_pos"</span>)]
-    </span><span class="kw">fn </span>set_value_pos(<span class="kw-2">&amp;</span><span class="self">self</span>, pos: <a href="enums.rs.html#8653-8668">PositionType</a>) {
+    </span><span class="kw">fn </span>set_value_pos(<span class="kw-2">&amp;</span><span class="self">self</span>, pos: <a href="enums.rs.html#8654-8669">PositionType</a>) {
         <span class="kw">unsafe </span>{
             <a href="../../../gtk4_sys/fn.gtk_scale_set_value_pos.html">ffi::gtk_scale_set_value_pos</a>(<a class="self" href="#1205">self</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#1205">pos</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.IntoGlib.html#tymethod.into_glib">into_glib</a>());
         }

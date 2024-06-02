@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/list_view.rs`."><title>list_view.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0-nightly (6f3df08aa 2024-05-30)" data-channel="nightly" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/list_view.rs`."><title>list_view.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-dd39b87e5fcfba68.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.80.0-nightly (f67a1acc0 2024-06-01)" data-channel="nightly" data-search-js="search-d52510db62a78183.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-118b08c4c78b968e.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-df360f571f6edeae.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -1620,13 +1620,13 @@
 // DO NOT EDIT
 
 </span><span class="kw">use crate</span>::{
-    <a href="accessible.rs.html#19-69">Accessible</a>, <a href="enums.rs.html#932-1232">AccessibleRole</a>, <a href="adjustment.rs.html#12-97">Adjustment</a>, <a href="../enums.rs.html#77-107">Align</a>, <a href="buildable.rs.html#7-31">Buildable</a>, <a href="constraint_target.rs.html#7-22">ConstraintTarget</a>, <a href="layout_manager.rs.html#8-71">LayoutManager</a>,
-    <a href="list_base.rs.html#7-355">ListBase</a>, <a href="list_item_factory.rs.html#5-64">ListItemFactory</a>, <a href="orientable.rs.html#13-43">Orientable</a>, <a href="enums.rs.html#7804-7813">Orientation</a>, <a href="enums.rs.html#7907-7918">Overflow</a>, <a href="scrollable.rs.html#13-82">Scrollable</a>, <a href="enums.rs.html#10383-10392">ScrollablePolicy</a>,
+    <a href="../../../gtk4_sys/index.html">ffi</a>, <a href="accessible.rs.html#19-69">Accessible</a>, <a href="enums.rs.html#933-1233">AccessibleRole</a>, <a href="adjustment.rs.html#13-98">Adjustment</a>, <a href="../enums.rs.html#77-107">Align</a>, <a href="buildable.rs.html#8-32">Buildable</a>, <a href="constraint_target.rs.html#8-23">ConstraintTarget</a>, <a href="layout_manager.rs.html#8-71">LayoutManager</a>,
+    <a href="list_base.rs.html#7-355">ListBase</a>, <a href="list_item_factory.rs.html#7-66">ListItemFactory</a>, <a href="orientable.rs.html#13-43">Orientable</a>, <a href="enums.rs.html#7805-7814">Orientation</a>, <a href="enums.rs.html#7908-7919">Overflow</a>, <a href="scrollable.rs.html#13-82">Scrollable</a>, <a href="enums.rs.html#10384-10393">ScrollablePolicy</a>,
     <a href="selection_model.rs.html#13-87">SelectionModel</a>, <a href="widget.rs.html#18-853">Widget</a>,
 };
 <span class="attr">#[cfg(feature = <span class="string">"v4_12"</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_12"</span>)))]
-</span><span class="kw">use crate</span>::{<a href="flags.rs.html#985-1003">ListScrollFlags</a>, <a href="enums.rs.html#6954-6972">ListTabBehavior</a>, <a href="scroll_info.rs.html#7-21">ScrollInfo</a>};
+</span><span class="kw">use crate</span>::{<a href="flags.rs.html#986-1004">ListScrollFlags</a>, <a href="enums.rs.html#6955-6973">ListTabBehavior</a>, <a href="scroll_info.rs.html#8-22">ScrollInfo</a>};
 <span class="kw">use </span>glib::{
     <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/prelude/index.html">prelude</a>::<span class="kw-2">*</span>,
     signal::{<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/signal/fn.connect_raw.html">connect_raw</a>, <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/signal/struct.SignalHandlerId.html">SignalHandlerId</a>},
@@ -2264,7 +2264,7 @@
     ///
     /// [`ListBaseExt`][trait@crate::prelude::ListBaseExt], [`WidgetExt`][trait@crate::prelude::WidgetExt], [`trait@glib::ObjectExt`], [`AccessibleExt`][trait@crate::prelude::AccessibleExt], [`BuildableExt`][trait@crate::prelude::BuildableExt], [`ConstraintTargetExt`][trait@crate::prelude::ConstraintTargetExt], [`OrientableExt`][trait@crate::prelude::OrientableExt], [`ScrollableExt`][trait@crate::prelude::ScrollableExt], [`WidgetExtManual`][trait@crate::prelude::WidgetExtManual], [`AccessibleExtManual`][trait@crate::prelude::AccessibleExtManual]
     </span><span class="attr">#[doc(alias = <span class="string">"GtkListView"</span>)]
-    </span><span class="kw">pub struct </span><a href="../../../gtk4/struct.ListView.html">ListView</a>(Object&lt;<a href="../../../gtk4_sys/struct.GtkListView.html">ffi::GtkListView</a>, <a href="../../../gtk4_sys/type.GtkListViewClass.html">ffi::GtkListViewClass</a>&gt;) @extends <a href="list_base.rs.html#7-355">ListBase</a>, <a href="widget.rs.html#18-853">Widget</a>, @implements <a href="accessible.rs.html#19-69">Accessible</a>, <a href="buildable.rs.html#7-31">Buildable</a>, <a href="constraint_target.rs.html#7-22">ConstraintTarget</a>, <a href="orientable.rs.html#13-43">Orientable</a>, <a href="scrollable.rs.html#13-82">Scrollable</a>;
+    </span><span class="kw">pub struct </span><a href="../../../gtk4/struct.ListView.html">ListView</a>(Object&lt;<a href="../../../gtk4_sys/struct.GtkListView.html">ffi::GtkListView</a>, <a href="../../../gtk4_sys/type.GtkListViewClass.html">ffi::GtkListViewClass</a>&gt;) @extends <a href="list_base.rs.html#7-355">ListBase</a>, <a href="widget.rs.html#18-853">Widget</a>, @implements <a href="accessible.rs.html#19-69">Accessible</a>, <a href="buildable.rs.html#8-32">Buildable</a>, <a href="constraint_target.rs.html#8-23">ConstraintTarget</a>, <a href="orientable.rs.html#13-43">Orientable</a>, <a href="scrollable.rs.html#13-82">Scrollable</a>;
 
     <span class="kw">match fn </span>{
         type_ =&gt; || ffi::gtk_list_view_get_type(),
@@ -2294,9 +2294,9 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gtk_list_view_new"</span>)]
     </span><span class="kw">pub fn </span>new(
         model: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>IsA&lt;<a href="selection_model.rs.html#13-87">SelectionModel</a>&gt;&gt;,
-        factory: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>IsA&lt;<a href="list_item_factory.rs.html#5-64">ListItemFactory</a>&gt;&gt;,
+        factory: <span class="prelude-ty">Option</span>&lt;<span class="kw">impl </span>IsA&lt;<a href="list_item_factory.rs.html#7-66">ListItemFactory</a>&gt;&gt;,
     ) -&gt; <a href="#20-655">ListView</a> {
-        <a class="macro" href="../rt.rs.html#23-35">assert_initialized_main_thread!</a>();
+        <a class="macro" href="../rt.rs.html#24-36">assert_initialized_main_thread!</a>();
         <span class="kw">unsafe </span>{
             <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.FromGlibPtrNone.html#tymethod.from_glib_none">Widget::from_glib_none</a>(<a href="../../../gtk4_sys/fn.gtk_list_view_new.html">ffi::gtk_list_view_new</a>(
                 <a href="#679">model</a>.<a href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html#method.map">map</a>(|p| <a href="#685">p</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/trait.Cast.html#tymethod.upcast">upcast</a>()).<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.IntoGlibPtr.html#tymethod.into_glib_ptr">into_glib_ptr</a>(),
@@ -2336,7 +2336,7 @@
     /// The factory in use
     </span><span class="attr">#[doc(alias = <span class="string">"gtk_list_view_get_factory"</span>)]
     #[doc(alias = <span class="string">"get_factory"</span>)]
-    </span><span class="kw">pub fn </span>factory(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<a href="list_item_factory.rs.html#5-64">ListItemFactory</a>&gt; {
+    </span><span class="kw">pub fn </span>factory(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<a href="list_item_factory.rs.html#7-66">ListItemFactory</a>&gt; {
         <span class="kw">unsafe </span>{ <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib_none.html">from_glib_none</a>(<a href="../../../gtk4_sys/fn.gtk_list_view_get_factory.html">ffi::gtk_list_view_get_factory</a>(<a class="self" href="#722">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>)) }
     }
 
@@ -2349,7 +2349,7 @@
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_12"</span>)))]
     #[doc(alias = <span class="string">"gtk_list_view_get_header_factory"</span>)]
     #[doc(alias = <span class="string">"get_header_factory"</span>)]
-    </span><span class="kw">pub fn </span>header_factory(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<a href="list_item_factory.rs.html#5-64">ListItemFactory</a>&gt; {
+    </span><span class="kw">pub fn </span>header_factory(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<a href="list_item_factory.rs.html#7-66">ListItemFactory</a>&gt; {
         <span class="kw">unsafe </span>{ <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib_none.html">from_glib_none</a>(<a href="../../../gtk4_sys/fn.gtk_list_view_get_header_factory.html">ffi::gtk_list_view_get_header_factory</a>(<a class="self" href="#735">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>)) }
     }
 
@@ -2405,7 +2405,7 @@
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_12"</span>)))]
     #[doc(alias = <span class="string">"gtk_list_view_get_tab_behavior"</span>)]
     #[doc(alias = <span class="string">"get_tab_behavior"</span>)]
-    </span><span class="kw">pub fn </span>tab_behavior(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="enums.rs.html#6954-6972">ListTabBehavior</a> {
+    </span><span class="kw">pub fn </span>tab_behavior(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="enums.rs.html#6955-6973">ListTabBehavior</a> {
         <span class="kw">unsafe </span>{ <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib.html">from_glib</a>(<a href="../../../gtk4_sys/fn.gtk_list_view_get_tab_behavior.html">ffi::gtk_list_view_get_tab_behavior</a>(<a class="self" href="#791">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>)) }
     }
 
@@ -2425,7 +2425,7 @@
     </span><span class="attr">#[cfg(feature = <span class="string">"v4_12"</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_12"</span>)))]
     #[doc(alias = <span class="string">"gtk_list_view_scroll_to"</span>)]
-    </span><span class="kw">pub fn </span>scroll_to(<span class="kw-2">&amp;</span><span class="self">self</span>, pos: <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, flags: <a href="flags.rs.html#985-1003">ListScrollFlags</a>, scroll: <span class="prelude-ty">Option</span>&lt;<a href="scroll_info.rs.html#7-21">ScrollInfo</a>&gt;) {
+    </span><span class="kw">pub fn </span>scroll_to(<span class="kw-2">&amp;</span><span class="self">self</span>, pos: <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, flags: <a href="flags.rs.html#986-1004">ListScrollFlags</a>, scroll: <span class="prelude-ty">Option</span>&lt;<a href="scroll_info.rs.html#8-22">ScrollInfo</a>&gt;) {
         <span class="kw">unsafe </span>{
             <a href="../../../gtk4_sys/fn.gtk_list_view_scroll_to.html">ffi::gtk_list_view_scroll_to</a>(
                 <a class="self" href="#811">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
@@ -2453,7 +2453,7 @@
     /// ## `factory`
     /// the factory to use
     </span><span class="attr">#[doc(alias = <span class="string">"gtk_list_view_set_factory"</span>)]
-    </span><span class="kw">pub fn </span>set_factory(<span class="kw-2">&amp;</span><span class="self">self</span>, factory: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="list_item_factory.rs.html#5-64">ListItemFactory</a>&gt;&gt;) {
+    </span><span class="kw">pub fn </span>set_factory(<span class="kw-2">&amp;</span><span class="self">self</span>, factory: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="list_item_factory.rs.html#7-66">ListItemFactory</a>&gt;&gt;) {
         <span class="kw">unsafe </span>{
             <a href="../../../gtk4_sys/fn.gtk_list_view_set_factory.html">ffi::gtk_list_view_set_factory</a>(
                 <a class="self" href="#839">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
@@ -2471,7 +2471,7 @@
     </span><span class="attr">#[cfg(feature = <span class="string">"v4_12"</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_12"</span>)))]
     #[doc(alias = <span class="string">"gtk_list_view_set_header_factory"</span>)]
-    </span><span class="kw">pub fn </span>set_header_factory(<span class="kw-2">&amp;</span><span class="self">self</span>, factory: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="list_item_factory.rs.html#5-64">ListItemFactory</a>&gt;&gt;) {
+    </span><span class="kw">pub fn </span>set_header_factory(<span class="kw-2">&amp;</span><span class="self">self</span>, factory: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="list_item_factory.rs.html#7-66">ListItemFactory</a>&gt;&gt;) {
         <span class="kw">unsafe </span>{
             <a href="../../../gtk4_sys/fn.gtk_list_view_set_header_factory.html">ffi::gtk_list_view_set_header_factory</a>(
                 <a class="self" href="#857">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
@@ -2529,7 +2529,7 @@
     </span><span class="attr">#[cfg(feature = <span class="string">"v4_12"</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_12"</span>)))]
     #[doc(alias = <span class="string">"gtk_list_view_set_tab_behavior"</span>)]
-    </span><span class="kw">pub fn </span>set_tab_behavior(<span class="kw-2">&amp;</span><span class="self">self</span>, tab_behavior: <a href="enums.rs.html#6954-6972">ListTabBehavior</a>) {
+    </span><span class="kw">pub fn </span>set_tab_behavior(<span class="kw-2">&amp;</span><span class="self">self</span>, tab_behavior: <a href="enums.rs.html#6955-6973">ListTabBehavior</a>) {
         <span class="kw">unsafe </span>{
             <a href="../../../gtk4_sys/fn.gtk_list_view_set_tab_behavior.html">ffi::gtk_list_view_set_tab_behavior</a>(<a class="self" href="#915">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#915">tab_behavior</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.IntoGlib.html#tymethod.into_glib">into_glib</a>());
         }
@@ -2772,7 +2772,7 @@
     <span class="doccomment">/// Factory for populating list items.
     ///
     /// The factory must be for configuring [`ListItem`][crate::ListItem] objects.
-    </span><span class="kw">pub fn </span>factory(<span class="self">self</span>, factory: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="list_item_factory.rs.html#5-64">ListItemFactory</a>&gt;) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>factory(<span class="self">self</span>, factory: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="list_item_factory.rs.html#7-66">ListItemFactory</a>&gt;) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#1158">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"factory"</span>, <a href="#1158">factory</a>.<a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">clone</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/trait.Cast.html#tymethod.upcast">upcast</a>()),
         }
@@ -2783,7 +2783,7 @@
     /// The factory must be for configuring [`ListHeader`][crate::ListHeader] objects.
     </span><span class="attr">#[cfg(feature = <span class="string">"v4_12"</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_12"</span>)))]
-    </span><span class="kw">pub fn </span>header_factory(<span class="self">self</span>, header_factory: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="list_item_factory.rs.html#5-64">ListItemFactory</a>&gt;) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>header_factory(<span class="self">self</span>, header_factory: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="list_item_factory.rs.html#7-66">ListItemFactory</a>&gt;) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <span class="self"><a href="#1169">self</a>
                 </span>.builder
@@ -2817,7 +2817,7 @@
     <span class="doccomment">/// Behavior of the &lt;kbd&gt;Tab&lt;/kbd&gt; key
     </span><span class="attr">#[cfg(feature = <span class="string">"v4_12"</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_12"</span>)))]
-    </span><span class="kw">pub fn </span>tab_behavior(<span class="self">self</span>, tab_behavior: <a href="enums.rs.html#6954-6972">ListTabBehavior</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>tab_behavior(<span class="self">self</span>, tab_behavior: <a href="enums.rs.html#6955-6973">ListTabBehavior</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#1203">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"tab-behavior"</span>, <a href="#1203">tab_behavior</a>),
         }
@@ -2825,7 +2825,7 @@
 
     <span class="doccomment">/// The orientation of the list. See GtkOrientable:orientation
     /// for details.
-    </span><span class="kw">pub fn </span>orientation(<span class="self">self</span>, orientation: <a href="enums.rs.html#7804-7813">Orientation</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>orientation(<span class="self">self</span>, orientation: <a href="enums.rs.html#7805-7814">Orientation</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#1211">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"orientation"</span>, <a href="#1211">orientation</a>),
         }
@@ -3011,7 +3011,7 @@
     ///
     /// This property is meant to be set by widget implementations,
     /// typically in their instance init function.
-    </span><span class="kw">pub fn </span>overflow(<span class="self">self</span>, overflow: <a href="enums.rs.html#7907-7918">Overflow</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>overflow(<span class="self">self</span>, overflow: <a href="enums.rs.html#7908-7919">Overflow</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#1397">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"overflow"</span>, <a href="#1397">overflow</a>),
         }
@@ -3110,7 +3110,7 @@
     <span class="doccomment">/// The accessible role of the given [`Accessible`][crate::Accessible] implementation.
     ///
     /// The accessible role cannot be changed once set.
-    </span><span class="kw">pub fn </span>accessible_role(<span class="self">self</span>, accessible_role: <a href="enums.rs.html#932-1232">AccessibleRole</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>accessible_role(<span class="self">self</span>, accessible_role: <a href="enums.rs.html#933-1233">AccessibleRole</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#1496">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"accessible-role"</span>, <a href="#1496">accessible_role</a>),
         }
@@ -3119,7 +3119,7 @@
     <span class="doccomment">/// Horizontal [`Adjustment`][crate::Adjustment] of the scrollable widget.
     ///
     /// This adjustment is shared between the scrollable widget and its parent.
-    </span><span class="kw">pub fn </span>hadjustment(<span class="self">self</span>, hadjustment: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="adjustment.rs.html#12-97">Adjustment</a>&gt;) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>hadjustment(<span class="self">self</span>, hadjustment: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="adjustment.rs.html#13-98">Adjustment</a>&gt;) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <span class="self"><a href="#1505">self</a>
                 </span>.builder
@@ -3128,7 +3128,7 @@
     }
 
     <span class="doccomment">/// Determines when horizontal scrolling should start.
-    </span><span class="kw">pub fn </span>hscroll_policy(<span class="self">self</span>, hscroll_policy: <a href="enums.rs.html#10383-10392">ScrollablePolicy</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>hscroll_policy(<span class="self">self</span>, hscroll_policy: <a href="enums.rs.html#10384-10393">ScrollablePolicy</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#1514">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"hscroll-policy"</span>, <a href="#1514">hscroll_policy</a>),
         }
@@ -3137,7 +3137,7 @@
     <span class="doccomment">/// Vertical [`Adjustment`][crate::Adjustment] of the scrollable widget.
     ///
     /// This adjustment is shared between the scrollable widget and its parent.
-    </span><span class="kw">pub fn </span>vadjustment(<span class="self">self</span>, vadjustment: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="adjustment.rs.html#12-97">Adjustment</a>&gt;) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>vadjustment(<span class="self">self</span>, vadjustment: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="adjustment.rs.html#13-98">Adjustment</a>&gt;) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <span class="self"><a href="#1523">self</a>
                 </span>.builder
@@ -3146,7 +3146,7 @@
     }
 
     <span class="doccomment">/// Determines when vertical scrolling should start.
-    </span><span class="kw">pub fn </span>vscroll_policy(<span class="self">self</span>, vscroll_policy: <a href="enums.rs.html#10383-10392">ScrollablePolicy</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>vscroll_policy(<span class="self">self</span>, vscroll_policy: <a href="enums.rs.html#10384-10393">ScrollablePolicy</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#1532">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"vscroll-policy"</span>, <a href="#1532">vscroll_policy</a>),
         }
