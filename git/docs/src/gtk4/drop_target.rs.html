@@ -225,7 +225,7 @@
     </span><span class="doccomment">/// Similar to [`Self::value`] but panics if the value is of a different
     /// type.
     </span><span class="kw">pub fn </span>value_as&lt;V: <span class="kw">for</span>&lt;<span class="lifetime">'b</span>&gt; FromValue&lt;<span class="lifetime">'b</span>&gt; + <span class="lifetime">'static</span>&gt;(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;V&gt; {
-        <a class="self" href="#36">self</a>.<a href="auto/drop_target.rs.html#358-360">value</a>().<a href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html#method.map">map</a>(|v| {
+        <a class="self" href="#36">self</a>.<a href="auto/drop_target.rs.html#360-362">value</a>().<a href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html#method.map">map</a>(|v| {
             <a href="#37">v</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/value/struct.Value.html#method.get_owned">get_owned</a>::&lt;V&gt;()
                 .<a href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html#method.expect">expect</a>(<span class="string">"Failed to get value as this type"</span>)
         })

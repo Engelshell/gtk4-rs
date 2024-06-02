@@ -188,14 +188,14 @@
     ) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a> {
         <span class="kw">let </span>column = <a href="auto/tree_view_column.rs.html#149-152">TreeViewColumn::new</a>();
         <span class="kw">if </span><span class="self">self</span>.as_ref().is_fixed_height_mode() {
-            <a href="#45">column</a>.<a href="auto/tree_view_column.rs.html#1116-1120">set_sizing</a>(<a href="auto/enums.rs.html#12733">TreeViewColumnSizing::Fixed</a>);
+            <a href="#45">column</a>.<a href="auto/tree_view_column.rs.html#1137-1141">set_sizing</a>(<a href="auto/enums.rs.html#12733">TreeViewColumnSizing::Fixed</a>);
         }
-        <a href="#45">column</a>.<a href="auto/tree_view_column.rs.html#1215-1219">set_title</a>(<a href="#41">title</a>);
-        <a href="#45">column</a>.<a href="auto/tree_view_column.rs.html#856-864">pack_start</a>(<a href="#42">cell</a>, <span class="bool-val">true</span>);
+        <a href="#45">column</a>.<a href="auto/tree_view_column.rs.html#1241-1245">set_title</a>(<a href="#41">title</a>);
+        <a href="#45">column</a>.<a href="auto/tree_view_column.rs.html#868-876">pack_start</a>(<a href="#42">cell</a>, <span class="bool-val">true</span>);
         <a href="#43">attributes</a>.<a href="https://doc.rust-lang.org/nightly/core/foreigntype.slice.html#method.iter">iter</a>().<a href="https://doc.rust-lang.org/nightly/core/iter/traits/iterator/trait.Iterator.html#tymethod.for_each">for_each</a>(|(attribute, column_id)| {
             <a href="#45">column</a>.<a href="auto/tree_view_column.rs.html#207-221">add_attribute</a>(<a href="#42">cell</a>, <a href="#51">attribute</a>, <span class="kw-2">*</span><a href="#51">column_id</a>);
         });
-        <a class="self" href="#39">self</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>().<a href="auto/tree_view.rs.html#2663-2671">insert_column</a>(<span class="kw-2">&amp;</span><a href="#45">column</a>, <a href="#40">position</a>)
+        <a class="self" href="#39">self</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>().<a href="auto/tree_view.rs.html#2678-2686">insert_column</a>(<span class="kw-2">&amp;</span><a href="#45">column</a>, <a href="#40">position</a>)
     }
 
     <span class="attr">#[doc(alias = <span class="string">"gtk_tree_view_set_row_separator_func"</span>)]

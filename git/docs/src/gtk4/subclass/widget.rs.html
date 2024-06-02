@@ -2738,12 +2738,12 @@
     <span class="kw">let </span>widget = <a href="#788">imp</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/subclass/types/trait.ObjectSubclassExt.html#tymethod.obj">obj</a>();
     <span class="kw">let </span>widget = <a href="#790">widget</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/trait.Cast.html#tymethod.unsafe_cast_ref">unsafe_cast_ref</a>::&lt;<a href="../auto/widget.rs.html#18-853">Widget</a>&gt;();
     <span class="kw">let </span><span class="kw-2">mut </span>hexpand: <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> = <span class="kw">if </span>widget.is_hexpand_set() {
-        <a href="#791">widget</a>.<a href="../auto/widget.rs.html#1907-1909">hexpands</a>()
+        <a href="#791">widget</a>.<a href="../auto/widget.rs.html#1915-1917">hexpands</a>()
     } <span class="kw">else </span>{
         <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib.html">from_glib</a>(<span class="kw-2">*</span><a href="#784">hexpand_ptr</a>)
     };
     <span class="kw">let </span><span class="kw-2">mut </span>vexpand: <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> = <span class="kw">if </span>widget.is_vexpand_set() {
-        <a href="#791">widget</a>.<a href="../auto/widget.rs.html#2494-2496">vexpands</a>()
+        <a href="#791">widget</a>.<a href="../auto/widget.rs.html#2515-2517">vexpands</a>()
     } <span class="kw">else </span>{
         <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib.html">from_glib</a>(<span class="kw-2">*</span><a href="#785">vexpand_ptr</a>)
     };
